@@ -1,16 +1,11 @@
 import "./App.css";
-import Footer from "./components/footer";
-import Header from "./components/header";
-import { Outlet } from "react-router-dom";
+// import Footer from "./components/footer";
+// import Header from "./components/header";
+// import { Outlet } from "react-router-dom";
+import BlogScreen from "./pages/blog_screen";
 
 function App() {
-  return (
-    <div className="App">
-        <Header></Header>
-        <Outlet></Outlet>
-        <Footer></Footer>
-    </div>
-  );
+  return <BlogScreen />;
 }
 
 export default App;
