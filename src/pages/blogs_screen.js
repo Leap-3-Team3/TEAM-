@@ -17,13 +17,13 @@ const BlogsScreen = () => {
             console.log(res.data.data);
         }
         getData()
-    }, []);
+    }, [pageNumber]);
 
 
     return (
         <div className="py-24 px-56" style={{ backgroundColor: '#F5F5F5' }}>
             <div className="flex  flex-col items-start">
-                <h1 className="text-5xl my-2.5">Blosdfsg posts</h1>
+                <h1 className="text-5xl my-2.5">Blogs</h1>
                 <p className="mb-9 mt-3">Our latest updates and blogs about managing your team</p>
                 <div className="flex flex-row flex-wrap justify-between gap-10">
                     {
@@ -34,7 +34,7 @@ const BlogsScreen = () => {
                 </div>
             </div>
 
-            <button className="px-6 py-2 mt-16 rounded-sm" style={{ backgroundColor: "#808080" }}>Next &gt; </button>
+            <button onClick={()=>{setPageNumber(pageNumber++)}} className="px-6 py-2 mt-16 rounded-sm" style={{ backgroundColor: "#808080" }}>Next &gt; </button>
         </div>
     )
 }

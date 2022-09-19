@@ -1,13 +1,19 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { sendRequest } from "../api/api";
 import { CustomAvatar } from "../components/CustomAvatar";
 import { UserFooter } from "../components/UserAndDate";
 
 const BlogDetail = () => {
   let { id } = useParams();
+  let [data,setData] =useState([])
+  const getData = async () => {
+    let data = await sendRequest({url:`post/${id}`, method: 'GET'})
+    // setData(data)
+  }
+  // console.log(data)
   useEffect(()=>{
-    console.log(id)
-    //func duuudagdana
+    getData()
   })
   return (
     <div className="w-screen flex justify-center">
