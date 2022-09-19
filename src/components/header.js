@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 const Header = ({ color }) => {
-  const navigate = useNavigate();
+    const navigate = useNavigate();
   let headerButtonDatas = [
     {
       text: "Blogs",
@@ -19,14 +19,13 @@ const Header = ({ color }) => {
       url: "/profile",
     },
   ];
-  function handleRoute({ url }) {
-    console.log(url);
-    navigate(url);
-    console.log("navigate to" + url);
+  function handleRoute(url) {
+    console.log(url)
+    navigate(url)
   }
   return (
     <div className="flex flex-row justify-between bg-transparent absolute top-0 left-0 w-full h-[60px] items-center pt-4">
-      <div className="text-3xl font-extrabold justify-center items-center p-4 ml-10">
+      <div className="text-3xl font-extrabold justify-center items-center p-4 ml-10" onClick={()=>navigate('/')}>
         team.
       </div>
       <div className="flex flex-row mr-10">
