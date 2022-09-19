@@ -6,16 +6,16 @@ import CustomText from "./CustomText";
 const HomeComments = () => {
   let arr = new Array(5).fill(0);
   return (
-    <div className="h-[500px] w-screen flex flex-col">
+    <div className="h-[500px] w-screen flex flex-col mt-10">
       <div className="justify-center flex w-auto">
         <p className="text-5xl text-black font-bold text-left tracking-wide">
           What people say about us
         </p>
       </div>
       <div className="flex flex-row w-full p-5 overflow-scroll scroll-smooth">
-        {arr.map(() => {
+        {arr.map((item, index) => {
           return (
-            <div className="h-[374px] min-w-[366px] flex flex-col shadow-xl m-5 p-5 justify-between">
+            <div className="h-[374px] min-w-[366px] flex flex-col shadow-xl m-5 p-5 justify-between" key={index}>
               <div className="flex flex-col">
                 <CommentStars></CommentStars>
                 <CustomText

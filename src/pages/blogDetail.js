@@ -1,7 +1,14 @@
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { CustomAvatar } from "../components/CustomAvatar";
 import { UserFooter } from "../components/UserAndDate";
 
 const BlogDetail = () => {
+  let { id } = useParams();
+  useEffect(()=>{
+    console.log(id)
+    //func duuudagdana
+  })
   return (
     <div className="w-screen flex justify-center">
       <div className="w-3/5 my-40 flex flex-col items-center">

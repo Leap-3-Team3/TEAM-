@@ -1,11 +1,21 @@
 import "./App.css";
 import Header from "./components/header";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 function App() {
+  const {pathname} = useLocation()
+  const [color, setColor] = useState('');
+  useEffect(()=>{
+    if(pathname==='/'){
+      setColor('text-white')
+    }else{
+      setColor('text-black')
+    }
+  },[pathname])
   return (
     <div className="App">
-        <Header></Header>
+        <Header color={color}></Header>
         <Outlet></Outlet>
         {/* <Footer></Footer> */}
     </div>
