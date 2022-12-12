@@ -13,8 +13,8 @@ const BlogsScreen = () => {
                 method: 'GET'
             })
 
-            setData(res.data.data);
-            console.log(res.data.data);
+            setData([...res.data.data]);
+
         }
         getData()
     }, [pageNumber]);
@@ -34,7 +34,7 @@ const BlogsScreen = () => {
                 </div>
             </div>
 
-            <button onClick={()=>{setPageNumber(pageNumber++)}} className="px-6 py-2 mt-16 rounded-sm" style={{ backgroundColor: "#808080" }}>Next &gt; </button>
+            <button onClick={() => { setPageNumber( pageNumber + 1) }} className="px-6 py-2 mt-16 rounded-sm" style={{ backgroundColor: "#808080" }}>Next &gt; </button>
         </div>
     )
 }
